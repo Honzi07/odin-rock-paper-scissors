@@ -2,8 +2,8 @@ const choiceBtns = document.querySelectorAll('.choice-btn');
 const playerChoice = document.querySelector('#playerChoice');
 const computerChoice = document.querySelector('#computerChoice');
 const oneRound = document.querySelector('#oneRound');
-const playerScoreNum = document.querySelector('#playerScoreNum')
-const computerScoreNum = document.querySelector('#computerScoreNum')
+const playerScoreNum = document.querySelector('#playerScore')
+const computerScoreNum = document.querySelector('#computerScore')
 const popup = document.querySelector("#winnerPopup")
 
 
@@ -123,7 +123,7 @@ function winner() {
 // }
 
 choiceBtns.forEach(button => button.addEventListener('click', () => {
-  player = button.textContent;
+  player = button.id;
   computerPlay();
   playerChoice.textContent = `Player: ${player}`;
   computerChoice.textContent = `Computer: ${computer[num]}`;
