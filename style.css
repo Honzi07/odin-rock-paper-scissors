@@ -62,3 +62,16 @@ button {
     position: absolute;
     bottom: 144px;
 }
+
+.computer-border-selected {
+    border: 5px solid #EC994B;
+}
+
+@media (max-width:768px) {
+    player-icons, .computer-icons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
+}
