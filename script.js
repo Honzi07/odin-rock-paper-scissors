@@ -2,12 +2,16 @@ const choiceBtns = document.querySelectorAll('.choice-btn');
 const playerChoice = document.querySelector('#playerChoice');
 const computerChoice = document.querySelector('#computerChoice');
 const oneRound = document.querySelector('#oneRound');
-const playerScoreNum = document.querySelector('#playerScore')
-const computerScoreNum = document.querySelector('#computerScore')
-const popup = document.querySelector('#winnerPopup')
-const computerIconRock = document.querySelector('.computer-icon.rock')
-const computerIconPaper = document.querySelector('.computer-icon.paper')
-const computerIconScissors = document.querySelector('.computer-icon.scissors')
+const playerScoreNum = document.querySelector('#playerScore');
+const computerScoreNum = document.querySelector('#computerScore');
+const computerIconRock = document.querySelector('.computer-icon.rock');
+const computerIconPaper = document.querySelector('.computer-icon.paper');
+const computerIconScissors = document.querySelector('.computer-icon.scissors');
+const modal = document.querySelector('#gameWinner');
+const modalBtn = document.querySelector('#openModal');
+const resetBtn = document.querySelector('#resetBtn');
+const winnerText = document.querySelector('#winnerText');
+
 
 function computerPlay() {
   computer = ["Rock", "Paper", "Scissors"];
@@ -15,8 +19,8 @@ function computerPlay() {
 }
 
  let playerScore = 0;
-
  let computerScore = 0;
+
 
 function playRound() {
   if (player === computer[num]) {
@@ -48,14 +52,6 @@ function playRound() {
   }
 }
 
-function winner() {
-  if(playerScore === 5) {
-    console.log('You Win the Game!')
-  }
-  else if(computerScore === 5) {
-    console.log('Computer Win the Game!')
-  }
-}
 
 choiceBtns.forEach(button => button.addEventListener('click', () => {
   player = button.id;
@@ -65,8 +61,10 @@ choiceBtns.forEach(button => button.addEventListener('click', () => {
   oneRound.textContent = `Round: ${playRound()}`;
   playerScoreNum.textContent = `Player Score: ${playerScore}`
   computerScoreNum.textContent = `Computer Score: ${computerScore}`
-  borderColor()
+  borderColor();
+  winner();
 }));
+
 
 function borderColor() {
   if(computer[num] == 'Rock') {
@@ -83,5 +81,28 @@ function borderColor() {
     computerIconScissors.classList.add('computer-border-selected')
     computerIconPaper.classList.remove('computer-border-selected')
     computerIconRock.classList.remove('computer-border-selected')
+  }
+}
+
+
+function resetGame() {
+  modal.style.display = 'none';
+  location.reload();
+}
+
+modalBtn.addEventListener('click', () => modal.style.display = 'block');
+
+resetBtn.addEventListener('click', resetGame);
+
+
+function winner() {
+  if(playerScore === 5 || computerScore === 5) {
+    modal.style.display = 'block';
+    if(playerScore === 5) {
+      winnerText.textContent = 'Yay! you Win the game!';
+    }
+    if(computerScore === 5) {
+      winnerText.textContent = 'The computer Win the game !';
+    }
   }
 }

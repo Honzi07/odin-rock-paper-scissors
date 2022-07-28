@@ -32,7 +32,8 @@ img {
     justify-content: space-around;
 }
 
-.player, .computer {
+.player,
+.computer {
     max-width: 50%;
     display: flex;
     flex-direction: column;
@@ -45,18 +46,18 @@ img {
     cursor: pointer;
 }
 
-.player-icons, .computer-icons{
+.player-icons,
+.computer-icons{
     display: flex;
     justify-content: center;
     gap: 30px;
 }
 
-button {
+.choice-btn {
     display: flex;
     padding: 0;
     border: 0;
 }
-
 
 .thisRound {
     position: absolute;
@@ -65,6 +66,45 @@ button {
 
 .computer-border-selected {
     border: 5px solid #EC994B;
+}
+
+#resetBtn {
+    background-color: #F1EEE9;
+    border: 5px solid #15133C;
+    border-radius: 10px;
+    max-width: 30%;
+    height: 30%;
+    transition: border-color 0.3s ease;
+}
+
+#resetBtn:hover {
+    border-color: #EC994B;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3); 
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 5px solid #15133C;
+    border-radius: 10px;
+    height: 30%;
+    max-width: max-content;
 }
 
 @media (max-width:768px) {
