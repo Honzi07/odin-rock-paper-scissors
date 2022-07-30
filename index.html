@@ -1,64 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <title>Document</title>
-</head>
-<body> 
+  </head>
+  <body>
     <div class="wrapper">
-        <div class="player">
-            <div class="player-icons">
-                <button id="Rock" class="choice-btn"><img src="images/cartoon-rock-vector-characters.png" alt="rock"></button>
+      <div class="player">
+        <div class="player-icons">
+          <button id="Rock" class="choice-btn">
+            <img src="images/cartoon-rock-vector-characters.png" alt="rock" />
+          </button>
 
-                <button id="Paper" class="choice-btn"><img src="images/cartoon-paper-vector-characters.png" alt="paper"></button>
+          <button id="Paper" class="choice-btn">
+            <img src="images/cartoon-paper-vector-characters.png" alt="paper" />
+          </button>
 
-
-                <button id="Scissors" class="choice-btn"><img src="images/cartoon-scissors-vector-characters.png" alt="scissors"></button>
-
-            </div>
-            <div class="choice-text">
-                <h1 id ="playerChoice">Player:</h1>
-            </div>
-            <div class="score-text">
-                <h1 id="playerScore">Player Score:</h1>
-            </div>
+          <button id="Scissors" class="choice-btn">
+            <img
+              src="images/cartoon-scissors-vector-characters.png"
+              alt="scissors"
+            />
+          </button>
         </div>
-        <div class="computer">
-            <div class="computer-icons">
-                <img class="computer-icon rock" src="images/cartoon-rock-vector-characters.png" alt="rock">
-                <img class="computer-icon paper" src="images/cartoon-paper-vector-characters.png" alt="paper">
-                <img class="computer-icon scissors" src="images/cartoon-scissors-vector-characters.png" alt="scissors">
-            </div> 
-            <div class="choice-text">
-                <h1 id="computerChoice">Computer:</h1>
-            </div>
-            <div class="score-text">
-                <h1 id="computerScore">Computer Score:</h1>
-            </div>
+        <div class="choice-text">
+          <h1 id="playerChoice">Player:</h1>
         </div>
-
-        <div class ="thisRound">
-            <h1 id ="oneRound">Round:</h1>
+        <div class="score-text">
+          <h1 id="playerScore">Player Score:</h1>
         </div>
+      </div>
+      <div class="computer">
+        <div class="computer-icons">
+          <div>
+            <img
+              class="computer-icon rock"
+              src="images/cartoon-rock-vector-characters.png"
+              alt="rock"
+            />
+          </div>
 
+          <div>
+            <img
+              class="computer-icon paper"
+              src="images/cartoon-paper-vector-characters.png"
+              alt="paper"
+            />
+          </div>
+          <div>
+            <img
+              class="computer-icon scissors"
+              src="images/cartoon-scissors-vector-characters.png"
+              alt="scissors"
+            />
+          </div>
+        </div>
+        <div class="choice-text">
+          <h1 id="computerChoice">Computer:</h1>
+        </div>
+        <div class="score-text">
+          <h1 id="computerScore">Computer Score:</h1>
+        </div>
+      </div>
     </div>
-    <button id="openModal">Open</button>
+
+    <div class="thisRound">
+      <h1 id="oneRound">Round:</h1>
+    </div>
 
     <div id="gameWinner" class="modal">
-        <div class="modal-content">
-            <h1 id="winnerText"></h1>
-            <button id="resetBtn">Play again!</button>
-        </div>
-    
+      <div class="modal-content">
+        <h1 id="winnerText">Test text Test text</h1>
+        <button id="resetBtn">Play again!</button>
+      </div>
     </div>
-
-
-</body>
+  </body>
 </html>

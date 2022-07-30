@@ -8,9 +8,12 @@ const computerIconRock = document.querySelector('.computer-icon.rock');
 const computerIconPaper = document.querySelector('.computer-icon.paper');
 const computerIconScissors = document.querySelector('.computer-icon.scissors');
 const modal = document.querySelector('#gameWinner');
-const modalBtn = document.querySelector('#openModal');
 const resetBtn = document.querySelector('#resetBtn');
 const winnerText = document.querySelector('#winnerText');
+
+
+let playerScore = 0;
+let computerScore = 0;
 
 
 function computerPlay() {
@@ -18,9 +21,23 @@ function computerPlay() {
   num = Math.floor(Math.random() * 3);
 }
 
- let playerScore = 0;
- let computerScore = 0;
+function resetGame() {
+  modal.style.display = 'none';
+  location.reload();
+}
 
+
+function winner() {
+  if(playerScore === 5 || computerScore === 5) {
+    modal.style.display = 'block';
+    if(playerScore === 5) {
+      winnerText.textContent = 'Yay! You Win the game!';
+    }
+    if(computerScore === 5) {
+      winnerText.textContent = 'The computer Win the game !';
+    }
+  }
+}
 
 function playRound() {
   if (player === computer[num]) {
@@ -53,19 +70,6 @@ function playRound() {
 }
 
 
-choiceBtns.forEach(button => button.addEventListener('click', () => {
-  player = button.id;
-  computerPlay();
-  playerChoice.textContent = `Player: ${player}`;
-  computerChoice.textContent = `Computer: ${computer[num]}`;
-  oneRound.textContent = `Round: ${playRound()}`;
-  playerScoreNum.textContent = `Player Score: ${playerScore}`
-  computerScoreNum.textContent = `Computer Score: ${computerScore}`
-  borderColor();
-  winner();
-}));
-
-
 function borderColor() {
   if(computer[num] == 'Rock') {
     computerIconRock.classList.add('computer-border-selected')
@@ -85,24 +89,17 @@ function borderColor() {
 }
 
 
-function resetGame() {
-  modal.style.display = 'none';
-  location.reload();
-}
+choiceBtns.forEach(button => button.addEventListener('click', () => {
+  player = button.id;
+  computerPlay();
+  playerChoice.textContent = `Player: ${player}`;
+  computerChoice.textContent = `Computer: ${computer[num]}`;
+  oneRound.textContent = `Round: ${playRound()}`;
+  playerScoreNum.textContent = `Player Score: ${playerScore}`
+  computerScoreNum.textContent = `Computer Score: ${computerScore}`
+  borderColor();
+  winner();
+}));
 
-modalBtn.addEventListener('click', () => modal.style.display = 'block');
 
 resetBtn.addEventListener('click', resetGame);
-
-
-function winner() {
-  if(playerScore === 5 || computerScore === 5) {
-    modal.style.display = 'block';
-    if(playerScore === 5) {
-      winnerText.textContent = 'Yay! you Win the game!';
-    }
-    if(computerScore === 5) {
-      winnerText.textContent = 'The computer Win the game !';
-    }
-  }
-}

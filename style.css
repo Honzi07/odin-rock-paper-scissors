@@ -1,14 +1,14 @@
 * {
     box-sizing: border-box;
     font-family: 'Mochiy Pop One', sans-serif;
-    outline: 1px solid red;
 }
 
 html {
     background-color: #fafafa;
 }
 
-h1 {
+h1,
+#resetBtn {
     color:#EC994B;
     letter-spacing: 2px;
     -webkit-text-stroke-width: 1px;
@@ -34,12 +34,14 @@ img {
 
 .player,
 .computer {
-    max-width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.player {
+    margin-right: 80px;
+} 
 
 .player-icons img:hover {
     border-color: #EC994B;
@@ -47,7 +49,7 @@ img {
 }
 
 .player-icons,
-.computer-icons{
+.computer-icons {
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -60,8 +62,9 @@ img {
 }
 
 .thisRound {
-    position: absolute;
-    bottom: 144px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .computer-border-selected {
@@ -72,9 +75,11 @@ img {
     background-color: #F1EEE9;
     border: 5px solid #15133C;
     border-radius: 10px;
-    max-width: 30%;
-    height: 30%;
+    padding: 10px;
+    max-width: fit-content;
+    height: auto;
     transition: border-color 0.3s ease;
+    font-size: 2rem;
 }
 
 #resetBtn:hover {
@@ -99,19 +104,31 @@ img {
     justify-content: center;
     align-items: center;
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 10% auto;
     padding: 20px;
     border: 5px solid #15133C;
     border-radius: 10px;
-    height: 30%;
+    height: auto;
     max-width: max-content;
 }
 
-@media (max-width:768px) {
-    player-icons, .computer-icons {
+@media screen and (max-width:888px) {
+    h1,
+    #resetBtn {
+        font-size: 1rem;
+    }
+
+    .player,
+    .computer {
+        width: 33%;
+    }
+
+    .player-icons, 
+    .computer-icons {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 30px;
+        gap: 15px;
+        max-width: 85px;
     }
 }
